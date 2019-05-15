@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodFollowingInput {
+public class XPathAxesMethodPrecedingInput {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -21,7 +21,7 @@ public class XPathAxesMethodFollowingInput {
 			driver = new ChromeDriver();
 			driver.navigate().to("http://www.studydunes.com/user/users/registration");
 			
-			List<WebElement> listOfInput = driver.findElements(By.xpath("//input[@id='UserName']//following::input"));
+			List<WebElement> listOfInput = driver.findElements(By.xpath("//input[@id='UserConfirmPassword']//preceding::input"));
 			Iterator<WebElement> iterator = listOfInput.iterator();
 			while(iterator.hasNext()) {
 				System.out.println(iterator.next().getAttribute("placeholder"));

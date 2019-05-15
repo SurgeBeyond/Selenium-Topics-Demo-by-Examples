@@ -19,10 +19,10 @@ public class XPathAxesMethodFollowingAnchor {
 					"C:\\Users\\ajayramola24\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("http://google.com");
+			driver.navigate().to("http://www.studydunes.com/user/users/registration");
 
 			List<WebElement> listOfAnchors = driver
-					.findElements(By.xpath("//a[contains(text(),'Store')]//following::a"));
+					.findElements(By.xpath("//h6[contains(text(),'Create Notes')]//following::li//h6"));
 			Iterator<WebElement> iterator = listOfAnchors.iterator();
 			while (iterator.hasNext()) {
 				System.out.println(iterator.next().getText());
