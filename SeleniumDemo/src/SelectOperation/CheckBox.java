@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class RadioButton {
+public class CheckBox {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -15,16 +15,17 @@ public class RadioButton {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("https://www.html.am/html-codes/forms/html-radio-button-code.cfm");	
-			driver.manage().window().fullscreen();
+			driver.navigate().to("https://www.html.am/html-codes/forms/html-checkbox-code.cfm");			
 			
-			WebElement male = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='male']"));	
-			male.click();			
+			WebElement apple = driver.findElement(By.xpath("//input[@name='fruit' and @value='Apple']"));	
+			apple.click();
 			
-			Thread.sleep(3000);
+			WebElement orange = driver.findElement(By.xpath("//input[@name='fruit' and @value='Orange']"));			
+			orange.click();
 			
-			WebElement female = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='female']"));	
-			female.click();
+			WebElement banana = driver.findElement(By.xpath("//input[@name='fruit' and @value='Banana']"));			
+			banana.click();
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -16,7 +16,7 @@ public class CssLocatorFindChildren {
 	public static void main(String[] args) {
 		try {
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\ajayramola24\\Downloads\\chromedriver_win32\\chromedriver.exe");
+					"C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");

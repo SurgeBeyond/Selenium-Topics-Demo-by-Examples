@@ -1,32 +1,27 @@
-package XPathLocator;
-
-import java.util.Iterator;
-import java.util.List;
+package AdvancedUserInteractions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.Keys;
 
-public class XPathAxesMethodChild {
+public class ContextClick {
 
 	public static String driverPath;
 	public static WebDriver driver;
 
 	public static void main(String[] args) {
+
 		try {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
-
 			driver = new ChromeDriver();
-			driver.navigate().to("http://google.com");
+			driver.get("http://swisnl.github.io/jQuery-contextMenu/demo.html");
+			WebElement Home = driver.findElement(By.linkText("Projects"));
 			
-			List<WebElement> listofLinks = driver.findElements(By.xpath("//div[@id='hptl']"));
-
-			Iterator<WebElement> iterator = listofLinks.iterator();
-
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next().getText());
-			}
+			Actions actions = new Actions(driver);
+			actions.contextClick(Home).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

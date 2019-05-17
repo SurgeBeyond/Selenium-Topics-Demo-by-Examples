@@ -1,14 +1,11 @@
-package XPathLocator;
-
-import java.util.Iterator;
-import java.util.List;
+package Image;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodChild {
+public class ClickOnImage {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -18,15 +15,10 @@ public class XPathAxesMethodChild {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("http://google.com");
+			driver.navigate().to("https://www.facebook.com/");			
 			
-			List<WebElement> listofLinks = driver.findElements(By.xpath("//div[@id='hptl']"));
-
-			Iterator<WebElement> iterator = listofLinks.iterator();
-
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next().getText());
-			}
+			WebElement facebookImage = driver.findElement(By.xpath("//i[@class='fb_logo img sp_Df33dxlhqsi sx_281d8e']"));	
+			facebookImage.click();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -15,8 +15,7 @@ public class CssLocatorStringMatchersSubString {
 
 	public static void main(String[] args) {
 		try {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\ajayramola24\\Downloads\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
