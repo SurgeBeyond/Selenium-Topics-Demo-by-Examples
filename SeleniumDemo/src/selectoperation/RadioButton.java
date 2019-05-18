@@ -1,14 +1,11 @@
-package XPathLocator;
-
-import java.util.Iterator;
-import java.util.List;
+package selectoperation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodParent {
+public class RadioButton {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -18,15 +15,16 @@ public class XPathAxesMethodParent {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("http://google.com");
+			driver.navigate().to("https://www.html.am/html-codes/forms/html-radio-button-code.cfm");	
+			driver.manage().window().fullscreen();
 			
-			List<WebElement> div = driver.findElements(By.xpath("//a[contains(text(),'About')]//parent::div"));
-
-			Iterator<WebElement> iterator = div.iterator();
-
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next().getAttribute("id"));
-			}
+			WebElement male = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='male']"));	
+			male.click();			
+			
+			Thread.sleep(3000);
+			
+			WebElement female = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='female']"));	
+			female.click();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

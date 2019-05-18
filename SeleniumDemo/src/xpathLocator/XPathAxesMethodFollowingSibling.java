@@ -1,4 +1,4 @@
-package XPathLocator;
+package xpathLocator;
 
 import java.util.Iterator;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodChildFocus {
+public class XPathAxesMethodFollowingSibling {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -18,13 +18,12 @@ public class XPathAxesMethodChildFocus {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("http://google.com");
+			driver.navigate().to("https://www.w3schools.com/howto/howto_css_button_group.asp");
 			
-			List<WebElement> links = driver.findElements(By.xpath("//div[@id='hptl']//child::a[2]"));
-			Iterator<WebElement> iterator = links.iterator();
-			while (iterator.hasNext()) {
-				WebElement link =iterator.next();
-				System.out.println(link.getText());
+			List<WebElement> siblingButtons = driver.findElements(By.xpath("//div[@class='w3-row w3-white']//div[3]//button[1]//following-sibling::button"));
+			Iterator<WebElement> iterator = siblingButtons.iterator();
+			while(iterator.hasNext()) {
+				System.out.println(iterator.next().getText());
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

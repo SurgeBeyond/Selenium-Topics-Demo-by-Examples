@@ -1,4 +1,4 @@
-package XPathLocator;
+package xpathLocator;
 
 import java.util.Iterator;
 import java.util.List;

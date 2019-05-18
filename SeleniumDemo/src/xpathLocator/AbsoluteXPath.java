@@ -1,14 +1,11 @@
-package XPathLocator;
-
-import java.util.Iterator;
-import java.util.List;
+package xpathLocator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodChild {
+public class AbsoluteXPath {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -19,14 +16,9 @@ public class XPathAxesMethodChild {
 
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
-			
-			List<WebElement> listofLinks = driver.findElements(By.xpath("//div[@id='hptl']"));
+			WebElement inputTextBox = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[4]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]"));
 
-			Iterator<WebElement> iterator = listofLinks.iterator();
-
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next().getText());
-			}
+			inputTextBox.sendKeys("Surge Beyond");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

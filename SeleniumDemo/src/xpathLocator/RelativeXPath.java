@@ -1,11 +1,11 @@
-package XPathLocator;
+package xpathLocator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathUsingOr {
+public class RelativeXPath {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -17,7 +17,7 @@ public class XPathUsingOr {
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
 			
-			WebElement inputTextBox = driver.findElement(By.xpath("//input[@name='q' or @title='Search']"));
+			WebElement inputTextBox = driver.findElement(By.xpath("//input[@name='q']"));
 			inputTextBox.sendKeys("Surge Beyond");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

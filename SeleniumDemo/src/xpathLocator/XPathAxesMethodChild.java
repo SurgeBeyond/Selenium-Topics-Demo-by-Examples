@@ -1,4 +1,4 @@
-package XPathLocator;
+package xpathLocator;
 
 import java.util.Iterator;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathAxesMethodSelf {
+public class XPathAxesMethodChild {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -20,9 +20,13 @@ public class XPathAxesMethodSelf {
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
 			
-			WebElement self = driver.findElement(By.xpath("//a[contains(text(),'About')]//self::a"));
+			List<WebElement> listofLinks = driver.findElements(By.xpath("//div[@id='hptl']"));
 
-				System.out.println(self.getText());
+			Iterator<WebElement> iterator = listofLinks.iterator();
+
+			while (iterator.hasNext()) {
+				System.out.println(iterator.next().getText());
+			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

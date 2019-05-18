@@ -1,11 +1,14 @@
-package XPathLocator;
+package xpathLocator;
+
+import java.util.Iterator;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPathUsingAnd {
+public class XPathAxesMethodParent {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -17,8 +20,13 @@ public class XPathUsingAnd {
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
 			
-			WebElement inputTextBox = driver.findElement(By.xpath("//input[@name='q' and @title='Search']"));
-			inputTextBox.sendKeys("Surge Beyond");
+			List<WebElement> div = driver.findElements(By.xpath("//a[contains(text(),'About')]//parent::div"));
+
+			Iterator<WebElement> iterator = div.iterator();
+
+			while (iterator.hasNext()) {
+				System.out.println(iterator.next().getAttribute("id"));
+			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -1,11 +1,11 @@
-package SelectOperation;
+package xpathLocator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class RadioButton {
+public class XPathWithMethodText {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -15,16 +15,11 @@ public class RadioButton {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
 
 			driver = new ChromeDriver();
-			driver.navigate().to("https://www.html.am/html-codes/forms/html-radio-button-code.cfm");	
-			driver.manage().window().fullscreen();
+			driver.navigate().to("http://google.com");
 			
-			WebElement male = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='male']"));	
-			male.click();			
+			WebElement parent = driver.findElement(By.xpath("//*[text()='Here’s to every parent']"));
+			parent.click();
 			
-			Thread.sleep(3000);
-			
-			WebElement female = driver.findElement(By.xpath("//td[@class='exampleDisplay']//input[@value='female']"));	
-			female.click();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -1,14 +1,11 @@
-package findElementAndFindElements;
-
-import java.util.Iterator;
-import java.util.List;
+package xpathLocator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FindElements {
+public class XPathWithMethodStartsWith {
 
 	public static String driverPath;
 	public static WebDriver driver;
@@ -19,15 +16,9 @@ public class FindElements {
 
 			driver = new ChromeDriver();
 			driver.navigate().to("http://google.com");
-			List listOfAnchors = driver.findElements(By.tagName("a"));
 			
-			Iterator iterator = listOfAnchors.iterator();
-			
-			while(iterator.hasNext()) {
-				WebElement element = (WebElement)iterator.next();
-				System.out.println(element.getText());
-			}
-			
+			WebElement businessLink = driver.findElement(By.xpath("//*[starts-with(@ping, '/url?sa=t&rct')]"));
+			businessLink.click();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
