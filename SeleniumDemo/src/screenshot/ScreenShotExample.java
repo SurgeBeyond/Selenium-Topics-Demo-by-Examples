@@ -38,7 +38,7 @@ public class ScreenShotExample {
 
 	public static void getScreenshot() throws Exception {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File("C:\\Users\\Documents\\screenshot.png"));
+		FileUtils.copyFile(scrFile, new File("C:\\Users\\Public\\screenshot.png"));
 	}
 
 }

@@ -9,10 +9,10 @@ public class NavigationTest {
 
 	private static WebDriver driver;
 	private static String URL = "http://www.studydunes.com/homes/index";
-	private static String classRoomsXPath = ".//*[@id='onLineT']/a";
+	private static String classRoomsXPath = "//a[contains(text(),'Online Classes')]";
 	private static WebElement element = null;
-	private static String academicId = "academic";
-	private static String linkText = "Ques & Ans";
+	private static String onlineTraining = "//a[contains(text(),'Online Training')]";
+	private static String topics = "//a[contains(text(),'Topics')]";
 	
 	public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class NavigationTest {
 
 			driver.navigate().to(URL);
 			
-			element = driver.findElement(By.id(academicId));
+			element = driver.findElement(By.xpath(onlineTraining));
 			element.click();
 
 			Thread.sleep(2000);
@@ -31,7 +31,7 @@ public class NavigationTest {
 			element.click();
 			Thread.sleep(2000);
 	
-			element = driver.findElement(By.linkText(linkText));
+			element = driver.findElement(By.xpath(topics));
 			element.click();
 			Thread.sleep(2000);
 

@@ -9,5 +9,7 @@
 	<classpathentry kind="lib" path="C:/Users/ajayramola24/Downloads/selenium-java-3.141.59/libs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ajayramola24/Downloads/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ajayramola24/Downloads/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajayramola24/Downloads/commons-io-2.6-bin/commons-io-2.6/commons-io-2.6.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

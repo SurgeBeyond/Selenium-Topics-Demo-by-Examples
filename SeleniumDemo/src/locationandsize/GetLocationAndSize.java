@@ -20,7 +20,8 @@ public class GetLocationAndSize {
 
 			driver.navigate().to("http://google.com");
 
-			WebElement searchButton = driver.findElement(By.name("btnK"));
+			Thread.sleep(1000);
+			WebElement searchButton = driver.findElement(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@name='btnK']"));
 			Point searchBtnCoordinates = searchButton.getLocation();
 			int x = searchBtnCoordinates.getX();
 			int y = searchBtnCoordinates.getY();
