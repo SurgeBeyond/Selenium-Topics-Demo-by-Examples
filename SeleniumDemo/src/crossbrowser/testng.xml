@@ -10,7 +10,7 @@
 			<class name="crossbrowsertest.CrossBrowserTest"></class>	
 		</classes>
 	</test>
-
+	
 	<test name="IETest">
 		<parameter name="browser" value="IE" />
 		<classes>

@@ -1,11 +1,13 @@
-package crossbrowsertest;
+package crossbrowser;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -18,7 +20,7 @@ public class CrossBrowserTest {
  * @param browser
  * @throws Exception
  */
-@BeforeTest
+@BeforeClass
 @Parameters("browser")
 public void setup(String browser) throws Exception{
 	//Check if parameter passed from TestNG is 'Chrome'
@@ -41,6 +43,14 @@ public void setup(String browser) throws Exception{
 }
 
 @Test
-public void testParameterWithXML() throws InterruptedException{
-	driver.navigate().to("http://google.com");
+public void testParameterWithXML(){
+	
+	try {
+		driver.navigate().to("http://google.com");
+		
+		WebElement inputTextBox = driver.findElement(By.xpath("//input[@name='q']"));
+		inputTextBox.sendKeys("Surge Beyond");
+	}catch(Exception e) {
+		System.out.println(e.getMessage());
+		}
 }}
